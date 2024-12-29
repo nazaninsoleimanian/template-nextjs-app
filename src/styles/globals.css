@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background-app-rgb: 244, 245, 247;
+        --color-primary-950: 4, 43, 77;
+        --color-primary-900: 7, 68, 115;
+        --color-primary-800: 0, 81, 139;
+        --color-primary-700: 0, 96, 170;
+        --color-primary-600: 0, 121, 210;
+        --color-primary-500: 2, 153, 245;
+        --color-primary-400: 45, 179, 255;
+        --color-primary-300: 118, 204, 255;
+        --color-primary-200: 182, 226, 255;
+        --color-primary-100: 222, 240, 255;
+        --color-primary-50: 239, 248, 255;
+        --color-gray-950: 43, 43, 43;
+        --color-gray-900: 61, 61, 61;
+        --color-gray-800: 69, 69, 69;
+        --color-gray-700: 79, 79, 79;
+        --color-gray-600: 93, 93, 93;
+        --color-gray-500: 109, 109, 109;
+        --color-gray-400: 136, 136, 136;
+        --color-gray-300: 176, 176, 176;
+        --color-gray-200: 209, 209, 209;
+        --color-gray-100: 231, 231, 231;
+        --color-gray-50: 246, 246, 246;
+        --color-orange-950: 72, 29, 0;
+        --color-orange-900: 124, 58, 11;
+        --color-orange-800: 152, 71, 8;
+        --color-orange-700: 187, 92, 2;
+        --color-orange-600: 226, 132, 0;
+        --color-orange-500: 252, 172, 0;
+        --color-orange-400: 255, 207, 27;
+        --color-orange-300: 255, 225, 70;
+        --color-orange-200: 255, 240, 133;
+        --color-orange-100: 255, 247, 197;
+        --color-orange-50: 255, 253, 234;
+        --color-success: 27, 237, 86;
+        --color-warning: 252, 172, 0;
+        --color-error: 231, 56, 56;
+        --font-iransansx: 'iransansx';
+        --font-vazir: 'vazir';
+    }
+
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select {
+        @apply w-full rounded-lg border-gray-300 focus:ring-gray-900 focus:border-gray-900;
+    }
+ 
+    [type='checkbox'],
+    [type='radio'] {
+        @apply rounded-lg border-gray-300;
+    }
+
+    button > span{
+        @apply mx-0 !important;
+    }
+    a > span{
+        @apply mx-0 !important;
+    }
+    h1 {
+        @apply text-2xl font-bold;
+    }
+    h2 {
+        @apply text-xl font-bold;
+    }
+    h3 {
+        @apply text-lg font-bold;
+    }
+    h4 {
+        @apply text-base font-bold;
+    }
+    h5 {
+        @apply text-sm font-bold;
+    }
+    h6 {
+        @apply text-xs font-bold;
+    }
+    
+}
+
+@layer components {
+    .form_control {
+        @apply relative;
+    }
+    .validation_message {
+        @apply absolute text-[10px] leading-[12px] mt-1;
+    }
+    .validation_message__error {
+        @apply text-red-700;
+    }
+    .textField__input {
+        @apply w-full text-sm py-2 px-4 rounded text-gray-600 border-none ring-1 ring-gray-200 outline-none duration-200 transition-all ease-in-out hover:ring-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 placeholder:text-gray-300 disabled:hover:ring-gray-200 disabled:bg-gray-50 disabled:placeholder:text-gray-400 ;
+    }
+    .checkbox__input_primary {
+        @apply form-checkbox cursor-pointer rounded-[5px] border-none bg-primary-200/80 w-5 h-5 checked:text-primary-600 focus:ring-transparent disabled:bg-primary-300/80 disabled:hover:bg-primary-300/80 disabled:cursor-auto;
+    }
+    .checkbox__input {
+        @apply form-checkbox cursor-pointer rounded-[5px] !ring-0 border-gray-800 bg-white w-5 h-5 checked:text-gray-800 checked:border-gray-800 focus:ring-0 disabled:bg-gray-300/80 disabled:hover:bg-gray-300/80 disabled:border-none disabled:cursor-auto;
+    }
+    .radio__input {
+        @apply form-radio cursor-pointer border-none ring-1 ring-gray-950 bg-gray-200 w-4 h-4 checked:text-gray-950 focus:ring-gray-950;
+    }
+    .card__auth {
+        @apply min-w-80 max-w-96;
+    }
+    .overflow-scrolling-touch {
+        @apply overflow-auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    .table__th {
+        @apply w-full text-xs text-gray-700 font-medium px-3 py-2;
+    }
+    .table__td {
+        @apply w-full text-center;
+    }
+    .table__tr {
+        @apply w-full bg-white !rounded-xl px-3 py-2 
+    }
+    .rich-text-editor {
+        @apply bg-white text-black focus:outline-none;
+      }
+      
+      .rich-text-editor .mention {
+        @apply bg-blue-100 text-blue-800 font-semibold px-1 rounded;
+      }
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    user-select: none;
+    background-color: var(--background-app-rgb);
+    
+    ::-webkit-scrollbar {
+		width: 4px;
+        height: 4px;
+	}
+
+	::-webkit-scrollbar-track {
+		border-radius: 5px;
+		background-color: white;
+		box-shadow: inset 0px 14px 50px #dfdff4;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		background-color: rgb(var(--color-gray-300));
+	}
+
+    ::-webkit-user-select: text; /* Safari */
+    ::-ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+}
+
+.right_direction {
+    direction: rtl;
+}
+
+.left_direction {
+    direction: left;
+}
+
+.right_truncate {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .left_truncate {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: rtl;
+    text-align: left;
+  }
+
+.rti--container {
+    background-color: rgb(var(--color-secondary-100));
+    --rti-radius: 0.75rem !important;
+    --rti-s: 0.5rem;
+    --rti-tag: #edf2f7;
+    --rti-tag-remove: #e53e3e;
+    border: none !important;
+    border-radius: var(--rti-radius)!important;
+}
+
+.rti--container .rti--input {
+    /* background-color: rgb(var(--color-secondary-200));
+    color: rgb(var(--color-secondary-800));
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem; */
+
+    background-color: transparent;
+    color: #000;
+}
+
+.rti--container .rti--input:focus {
+box-shadow: unset;
+outline: 0;
+}
+  
+.rti--tag {
+background-color: rgb(var(--color-secondary-500));
+color: rgb(var(--color-secondary-600));
+}
+
+
+.pdf_wrapper {
+    /* @media screen and (max-width: 768px) {
+        .rpv-default-layout__toolbar {
+            visibility: hidden !important;
+        }
+        .rpv-default-layout__body {
+            padding-top: 0 !important;
+        }
+      } */
+    [data-testid="search__popover-button"]{
+        display: none !important;
+    }
+}
+
+.editor {
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    cursor: text;
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    box-shadow: inset 0px 1px 4px -2px #ababab;
+    background: #fefefe;
+    min-height: 110px;
+    max-height: 110px;
+    color: rgb(var(--color-gray-700));
+    overflow-y: auto;
+  }
+
+  .editor [data-testid="mentionText"]{
+    border-radius: 12px !important;
+  }
+  
+  .editor [data-testid="mentionText"] > span:first-of-type {
+    padding: 8px !important;
+  }
+
+  .editor .mnw6qvm {
+    overflow-y: auto;
+    max-height: 170px;
+  }
+  .mentionSuggestionsEntryAvatar {
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  @keyframes display {
+    0% {
+       transform: translateY(400px);
+       display: none;
+    }
+    50% {
+        display: none;
+    }
+    100% {
+        transform: translateY(0);
+        display: flex;
+    }
+}
+.animate-display {
+    animation: display 500ms linear;
+}
+.job-editor .DraftEditor-editorContainer {
+    z-index: 0 !important;
+}
+
+svg.star-svg {
+    display: inline;
+}
+
+
+@keyframes expandation {
+    0% {
+        max-height: 35px;
+    }
+    100% {
+        max-height: 500px;
+    }
+}
+.animate-expandation {
+    animation: expandation 2s linear forwards;
+}
+
+@keyframes contraction {
+    0% {
+        max-height: 500px;
+    }
+    100% {
+        max-height: auto;
+    }
+}
+.animate-contraction {
+    animation: contraction 2s linear forwards;
+}
+
+@keyframes opacityToZero {
+    0% {
+        max-height: 500px;
+        opacity: 1;
+    }
+    50% {
+        max-height: 100px;
+    }
+    100% {
+        max-height: 0;
+        display: none;
+        opacity: 0;
+    }
+}
+.animate-opacityToZero {
+    animation: opacityToZero 500ms linear forwards;
+}

@@ -1,0 +1,5 @@
+.kube/*
+postman/*
+bin/*
+src/repository/*
+postman_local.json
